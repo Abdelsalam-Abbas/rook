@@ -5,7 +5,7 @@ metadata:
   namespace: rook
 spec:
   versionTag: master
-  dataDirHostPath:
+  dataDirHostPath: /var/myrookdata
 # To control where various services will be scheduled by kubernetes, use the placement configuration sections below.
 # The example under 'all' would have all services scheduled on kubernetes nodes labeled with 'role=storage' and
 # tolerate taints with a key of 'storage-node'.
@@ -40,7 +40,7 @@ spec:
   storage:                # cluster level storage configuration and selection
     useAllNodes: true
     useAllDevices: false
-    deviceFilter:
+    deviceFilter: sda
     metadataDevice:
     location:
     storeConfig:
